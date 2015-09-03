@@ -8,7 +8,7 @@ C++ lets us program with _objects_. We describe objects in C++ by declaring and 
 
 Here is a sample header file <tt>Point.h</tt> that describes an object that represents a point in two-dimensional Euclidean space:
 
-<pre>
+```c++
 // A 2-dimensional point class!
 // Coordinates are double-precision floating point.
 class Point {
@@ -33,14 +33,14 @@ void setY(double newY);
 double getX();
 double getY();
 };
-</pre>
+```
 
 We can _instantiate_, or create an instance of, our class anywhere in the rest of our code by calling any of the constructors we have defined:
 
-<pre> 
+```c++ 
 Point myPoint;            // Calls Point::Point()
 Point myOtherPoint(5, 3); // Calls two-argument constructor Point::Point(double, double)
-</pre>
+```
 
 ### Your Task
 
@@ -52,9 +52,17 @@ Point myOtherPoint(5, 3); // Calls two-argument constructor Point::Point(double,
 
 You will probably find a square-root function useful for this! The C standard library has one, called <tt>sqrt()</tt>. The function takes a double and returns another double.
 
-If you were programming in C, you would <tt>#include <math.h></tt>, but in C++ you say <tt>#include <cmath></tt>. (This means, "Include the C Math header.") And then you are all set.
+If you were programming in C, you would
+```c++
+#include <math.h>
+```
+but in C++ you say
+```c++
+#include <cmath>
+```
+(This means, "Include the C Math header.") And then you are all set.
 
-4.  Create a new source file <tt>PA1.cpp</tt> and implement two functions:
+4.  Create a new source file <tt>pa1.cpp</tt> and implement two functions:
 
 *   <tt>double computeArea(Point &a, Point &b, Point &c)</tt>
 
@@ -70,7 +78,9 @@ In C++, you don't have to declare all variables at the top of a block; you can i
 
 5.  Compile these sources together like so:
 
-<pre>  g++ -Wall lab1.cc Point.cc -o pa1</pre>
+```
+g++ -Wall lab1.cpp Point.cpp -o pa1
+```
 
 Note:
 *   <tt>g++</tt> is the GNU C++ compiler.
@@ -80,7 +90,7 @@ Note:
 
 CLion uses CMake to create a makefile for your architecture. It uses the directives in the CMakeLists.txt file which can be found in your project's directory. The file looks like this
 
-<pre>
+```
 cmake_minimum_required(VERSION 3.2)
 project(pa1)
 
@@ -88,13 +98,15 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES Point.cpp PA1.cpp)
 add_executable(pa1 ${SOURCE_FILES})
-</pre>
+```
 
 For this project, all you need to do to run your Point code on CLion is to list all your *.cpp files as shown above.
 
 6.  Run the generated program:
 
-<pre>  ./pa1</pre>
+```
+./pa1
+```
 
 In CLion, you first have to build (Run-->Build) and then run (Run-->Run 'PA1') your project. Any output will appear in the built-in console.
 
