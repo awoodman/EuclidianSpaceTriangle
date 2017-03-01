@@ -1,10 +1,4 @@
-## CSCI 2312: Programming Assignment 1
-
-_ADAM WOODMAN - PA1_
-
-* * *
-
-Introduction: 
+## Area of triangles in Euclidian Space
 
 My program asks the user to enter the coordinated in 3D space for three separate points, in the follwing way:
 
